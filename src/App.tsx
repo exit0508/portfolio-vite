@@ -9,9 +9,12 @@ function App() {
   const { loading } = useProjects();
 
   return (
-    <div className="font-Roboto w-full h-svh bg-primary dark:bg-bgDark text-black dark:text-white">
-      <Header />
-      <div className="container px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
+    <div className="font-Roboto w-full min-h-screen bg-primary dark:bg-gray-950 text-black dark:text-white">
+      <div className="flex justify-center md:justify-start md:ml-3">
+        <Header />
+      </div>
+
+      <div className="container px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16 top-10">
         {loading ? (
           <h1>Error</h1>
         ) : (

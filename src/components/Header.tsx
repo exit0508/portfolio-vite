@@ -1,12 +1,14 @@
 import { Link } from "wouter";
+import { AlignJustify } from "lucide-react";
+import { Button } from "./ui/button";
 
 const Header = () => {
   return (
-    <header className="rounded-full bg-primaryShade1/80 backdrop-blur-sm border-2 border-white/30 shadow-lg dark:bg-bgDark">
-      <div className="flex h-20 max-w-screen-xl items-center gap-8 px-6 sm:px-10 lg:px-12">
-        <div className="text-3xl">
+    <header className="fixed top-3 rounded-full bg-white bg-white/90 backdrop-blur-lg">
+      <div className="container px-10 py-3 flex items-center gap-8">
+        <div className="text-xl">
           <Link href="/">
-            <a className="text-black hover:text-primaryHover dark:text-primaryHoverDark">
+            <a className="text-secondary font-bold hover:text-primaryHover dark:text-primaryHoverDark">
               Yurina Deguchi
             </a>
           </Link>
@@ -30,6 +32,11 @@ const Header = () => {
               </li>
             </ul>
           </nav>
+        </div>
+        <div>
+          <Button className="block rounded p-2.5 text-gray-600 transition hover:text-gray-600/75 md:hidden">
+            <AlignJustify />
+          </Button>
         </div>
       </div>
     </header>
