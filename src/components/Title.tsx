@@ -1,7 +1,7 @@
 import { Button } from "../components/ui/button";
 import { GithubIcon, LucideLinkedin, LucideMail } from "lucide-react";
 
-export function ButtonGhost() {
+export function ButtonContact() {
   return (
     <div className="mt-5">
       <Button variant="ghost">
@@ -32,7 +32,7 @@ const Title = () => {
         the Plureverse :)
       </h2>
       <div>
-        <ButtonGhost />
+        <ButtonContact />
       </div>
     </>
   );
