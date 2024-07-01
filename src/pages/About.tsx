@@ -102,24 +102,29 @@ const SkillItem = ({ item }: { item: SkillItem }) => (
 const About = () => {
   return (
     <div className="">
-      <Title />
+      <div className="mt-10">
+        <Title />
+      </div>
+
       <div className="mt-10 mb-5">
         <div className="container mx-auto p-4">
           <h1 className="text-3xl font-bold md:mb-5 sm:mb-2">Motivation</h1>
           <h2 className="sm:text-xl text-2xl mb-2 italic">
-            Plureverse and Empathy
+            Pluriverse and Empathy
           </h2>
           <p className="sm:text-base md:text-xl mb-10">
-            Emphasis is the most essential part of my motivation. When I found
-            "ontological design" to be a first, it makes me much more certain of
-            it. There are many taken for granted for invisible existence. I
-            would like to interact with them with empathy and corperate their
-            plureversal perspectives to make a more comfortable society. I will
-            not stick to "specific means". I'll always give priority to solving
-            problems. However, because of my academic background, I have an
-            interest in human-digital interaction. I have broad interests in
-            interface design, so it would be great if I could help you with my
-            design and front-end development skills!
+            Empathy is the most essential part of my motivation. When I read
+            "Designs for the Pluriverse" by Arturo Escobar at first (and still
+            going on it!), it makes me much more certain of it. We often
+            overlook people different from us. I'm sure we have to decolonise
+            authoritative ideas controlling us for better design for our future.
+            I would like to know various people and corperate their pluriversal
+            perspectives to make a more comfortable society. I am not limited to
+            a single approach. I am driven by a desire to solve problems.
+            However, because of my academic background, I have an interest in
+            human-digital interaction. I have broad interests in interface
+            design, so it would be great if I could help you with my design and
+            front-end development skills!
           </p>
         </div>
         <div className="container mx-auto p-4">
@@ -129,7 +134,7 @@ const About = () => {
             self-learner.
           </p>
           <SkillList skills={skills} />
-          <div className="mt-3 font-light">
+          <div className="mt-5 font-light">
             ...Ask me if you wanna know other skills!
           </div>
         </div>
