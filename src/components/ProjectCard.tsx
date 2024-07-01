@@ -11,8 +11,8 @@ import { ProjectProps } from "../utils/projectContext";
 
 const ProjectCard = ({ project }: { project: ProjectProps }) => {
   return (
-    <div className="pb-5">
-      <Card key={project.id} className="w-[300px]">
+    <div className="pb-5 sm:w-3/4 md:w-1/4">
+      <Card key={project.id} className="">
         <CardHeader>
           <CardTitle className="text-lg">{project.title}</CardTitle>
           <CardDescription>{project.projectDate}</CardDescription>
