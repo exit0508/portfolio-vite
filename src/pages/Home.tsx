@@ -11,7 +11,7 @@ const Home = () => {
       <div className="pt-1">
         <Hero />
       </div>
-      <h2 className="text-5xl mb-8">Projects</h2>
+      <h2 className="text-5xl mb-8">Recent Projects</h2>
       <CardList num={3} projects={projects} />
       <Link href="/projects">
         <Button>See more</Button>
