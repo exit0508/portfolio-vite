@@ -15,7 +15,7 @@ function App() {
       ) : (
         <>
           <div className="container mx-auto p-4">
-            <div className="sticky top-3 z-50 bg-primary dark:bg-gray-950">
+            <div className="sticky top-3 z-50">
               <Header />
             </div>
             <div className="mb-5 mt-5">
