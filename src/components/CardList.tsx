@@ -1,12 +1,27 @@
 import { ProjectProps } from "../utils/projectContext";
 import ProjectCard from "./ProjectCard";
 
-const CardList = ({ projects }: { projects: ProjectProps[] }) => {
+type cardNum = number;
+
+const CardList = ({
+  projects,
+  num,
+}: {
+  projects: ProjectProps[];
+  num?: cardNum;
+}) => {
+  const filteredProjects = (num: number | undefined) => {
+    if (num) {
+      return projects.filter((_, index) => index < num);
+    } else {
+      return projects;
+    }
+  };
   return (
-    <div className="flex flex-wrap">
-      {Array.isArray(projects) &&
-        projects?.map((project) => (
-          <ProjectCard key={project.id} project={project} />
+    <div className="flex flex-wrap gap-6">
+      {Array.isArray(filteredProjects(num)) &&
+        filteredProjects(num)?.map((project) => (
+          <ProjectCard key={`card-${project.id}`} project={project} />
         ))}
     </div>
   );
