@@ -120,8 +120,8 @@ export const ProjectProvider = ({ children }: { children: ReactNode }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const BASE_URL = import.meta.env.BASE_URL as string;
-  console.log(import.meta.env.MODE);
+  const BASE_URL = import.meta.env.VITE_API_BASE_URL as string;
+  console.log(BASE_URL);
 
   const setBaseUrl = () => {
     if (import.meta.env.MODE === "production") {
