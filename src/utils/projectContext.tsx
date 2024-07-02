@@ -137,7 +137,11 @@ export const ProjectProvider = ({ children }: { children: ReactNode }) => {
         setLoading(true);
 
         const response = await fetch(setBaseUrl(), {
-          mode: "no-cors",
+          method: "GET",
+          mode: "cors",
+          headers: {
+            "Content-Type": "application/json",
+          },
         });
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -150,7 +154,7 @@ export const ProjectProvider = ({ children }: { children: ReactNode }) => {
       } catch (err: any) {
         setError(err.message ? err.message : "An unknown error occurred");
         setLoading(false);
-        return error;
+        return console.log(error);
       }
     };
     fetchProjects();
