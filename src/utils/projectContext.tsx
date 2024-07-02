@@ -129,7 +129,7 @@ export const ProjectProvider = ({ children }: { children: ReactNode }) => {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const projects = await response.json();
-        console.log("project: ", projects);
+        //console.log("project: ", projects);
         setProjects(projects);
         //setProjects(dummyData);
         setLoading(false);
