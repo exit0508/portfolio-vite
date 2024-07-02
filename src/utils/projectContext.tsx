@@ -120,8 +120,8 @@ export const ProjectProvider = ({ children }: { children: ReactNode }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const BASE_URL = import.meta.env.VITE_API_BASE_URL as string;
-  //console.log(import.meta.env.MODE);
+  const BASE_URL = import.meta.env.BASE_URL as string;
+  console.log(import.meta.env.MODE);
 
   const setBaseUrl = () => {
     if (import.meta.env.MODE === "production") {
@@ -137,7 +137,7 @@ export const ProjectProvider = ({ children }: { children: ReactNode }) => {
         setLoading(true);
 
         const response = await fetch(setBaseUrl(), {
-          mode: "cors",
+          mode: "no-cors",
         });
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -150,7 +150,7 @@ export const ProjectProvider = ({ children }: { children: ReactNode }) => {
       } catch (err: any) {
         setError(err.message ? err.message : "An unknown error occurred");
         setLoading(false);
-        return console.log(error);
+        return error;
       }
     };
     fetchProjects();
