@@ -11,14 +11,18 @@ import { ProjectProps } from "../utils/projectContext";
 
 const ProjectCard = ({ project }: { project: ProjectProps }) => {
   return (
-    <div className="pb-5 sm:w-3/4 md:w-1/4">
-      <Card key={project.id} className="">
+    <div className="w-auto">
+      <Card key={project.id} className="h-96 flex flex-col justify-between">
         <CardHeader>
           <CardTitle className="text-lg">{project.title}</CardTitle>
           <CardDescription>{project.projectDate}</CardDescription>
         </CardHeader>
         <CardContent>
-          <img src={project.thumbnail} alt="thumbnail" />
+          <img
+            src={project.thumbnail}
+            alt={project.title}
+            className="object-contain h-48 w-96"
+          />
         </CardContent>
         <CardFooter>
           <a href={project.publicLink}>
