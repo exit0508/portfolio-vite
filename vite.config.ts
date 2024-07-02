@@ -6,14 +6,10 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      "/hello": {
-        target: "https://hono-backend.exit-deguchi0508.workers.dev/",
+      "/api": {
+        target: "https://hono-backend.exit-deguchi0508.workers.dev",
         changeOrigin: true,
-      },
-      "/projects": {
-        target: "https://hono-backend.exit-deguchi0508.workers.dev/projects",
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/projects/, ""),
+        rewrite: (path) => path.replace(/^\/api/, ""),
       },
     },
   },

@@ -120,11 +120,25 @@ export const ProjectProvider = ({ children }: { children: ReactNode }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+  const BASE_URL = import.meta.env.VITE_API_BASE_URL as string;
+  console.log(import.meta.env.MODE);
+
+  const setBaseUrl = () => {
+    if (import.meta.env.MODE === "production") {
+      return BASE_URL + "/projects";
+    } else {
+      return "/api/projects";
+    }
+  };
+
   useEffect(() => {
     const fetchProjects = async () => {
       try {
         setLoading(true);
-        const response = await fetch("/projects", { mode: "cors" });
+
+        const response = await fetch(setBaseUrl(), {
+          mode: "cors",
+        });
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
