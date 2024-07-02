@@ -124,9 +124,7 @@ export const ProjectProvider = ({ children }: { children: ReactNode }) => {
     const fetchProjects = async () => {
       try {
         setLoading(true);
-        const response = await fetch(
-          "https://hono-backend.exit-deguchi0508.workers.dev/projects"
-        );
+        const response = await fetch("/projects", { mode: "cors" });
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
