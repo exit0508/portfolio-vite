@@ -1,6 +1,4 @@
-import { Link } from "wouter";
 import Title from "./Title";
-import { Button } from "./ui/button";
 
 const Hero = () => {
   return (
