@@ -137,7 +137,6 @@ export const ProjectProvider = ({ children }: { children: ReactNode }) => {
         setLoading(true);
         console.log(setBaseUrl());
         const response = await fetch(setBaseUrl(), {
-          mode: "cors",
           credentials: "include",
         });
         if (!response.ok) {
