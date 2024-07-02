@@ -4,7 +4,7 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
   plugins: [react()],
-  base: "https://portfolio-vite-ept.pages.dev",
+  base: "https://hono-backend.exit-deguchi0508.workers.dev",
   server: {
     proxy: {
       "/api": {
