@@ -135,9 +135,9 @@ export const ProjectProvider = ({ children }: { children: ReactNode }) => {
     const fetchProjects = async () => {
       try {
         setLoading(true);
-
+        console.log(setBaseUrl());
         const response = await fetch(setBaseUrl(), {
-          mode: "no-cors",
+          mode: "cors",
         });
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
