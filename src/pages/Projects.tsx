@@ -3,7 +3,7 @@ import { useProjects } from "../utils/projectContext";
 
 const Projects = () => {
   const { projects } = useProjects();
-  console.log("aaaa", projects);
+  //console.log("aaaa", projects);
 
   return (
     <>
