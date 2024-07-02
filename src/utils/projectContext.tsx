@@ -137,7 +137,7 @@ export const ProjectProvider = ({ children }: { children: ReactNode }) => {
         setLoading(true);
 
         const response = await fetch(setBaseUrl(), {
-          mode: "cors",
+          mode: "no-cors",
         });
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
