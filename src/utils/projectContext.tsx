@@ -24,7 +24,6 @@ const ProjectContext = createContext<ProjectsContextProps | undefined>(
   undefined
 );
 
-<<<<<<< HEAD
 // const dummyData = [
 //   {
 //     id: "1",
@@ -107,90 +106,6 @@ const ProjectContext = createContext<ProjectsContextProps | undefined>(
 //     publicLink: "https://example.com/project10",
 //   },
 // ];
-=======
-const dummyData = [
-  {
-    id: "1",
-    title: "Responsive Web Design",
-    thumbnail: "https://placehold.jp/800x600.png",
-    projectDate: "2023-01-15",
-    tags: ["HTML", "CSS", "Responsive Design"],
-    publicLink: "https://example.com/project1",
-  },
-  {
-    id: "2",
-    title: "E-commerce Platform",
-    thumbnail: "https://placehold.jp/800x600.png",
-    projectDate: "2022-12-05",
-    tags: ["React", "Node.js", "E-commerce"],
-    publicLink: "https://example.com/project2",
-  },
-  {
-    id: "3",
-    title: "Mobile App Development",
-    thumbnail: "https://placehold.jp/800x600.png",
-    projectDate: "2023-02-20",
-    tags: ["React Native", "Mobile App"],
-    publicLink: "https://example.com/project3",
-  },
-  {
-    id: "4",
-    title: "Portfolio Website",
-    thumbnail: "https://placehold.jp/800x600.png",
-    projectDate: "2021-11-18",
-    tags: ["HTML", "CSS", "JavaScript"],
-    publicLink: "https://example.com/project4",
-  },
-  {
-    id: "5",
-    title: "Machine Learning Model",
-    thumbnail: "https://placehold.jp/800x600.png",
-    projectDate: "2023-03-25",
-    tags: ["Python", "Machine Learning"],
-    publicLink: "https://example.com/project5",
-  },
-  {
-    id: "6",
-    title: "Game Development",
-    thumbnail: "https://placehold.jp/800x600.png",
-    projectDate: "2022-09-14",
-    tags: ["Unity", "C#"],
-    publicLink: "https://example.com/project6",
-  },
-  {
-    id: "7",
-    title: "Weather App",
-    thumbnail: "https://placehold.jp/800x600.png",
-    projectDate: "2023-05-10",
-    tags: ["React", "API"],
-    publicLink: "https://example.com/project7",
-  },
-  {
-    id: "8",
-    title: "Blog Platform",
-    thumbnail: "https://placehold.jp/800x600.png",
-    projectDate: "2022-10-08",
-    tags: ["Node.js", "Express", "MongoDB"],
-    publicLink: "https://example.com/project8",
-  },
-  {
-    id: "9",
-    title: "Social Media Integration",
-    thumbnail: "https://placehold.jp/800x600.png",
-    projectDate: "2023-06-15",
-    tags: ["JavaScript", "API", "Social Media"],
-    publicLink: "https://example.com/project9",
-  },
-  {
-    id: "10",
-    title: "AI Chatbot",
-    thumbnail: "https://placehold.jp/800x600.png",
-    projectDate: "2023-04-22",
-    tags: ["Python", "AI", "NLP"],
-    publicLink: "https://example.com/project10",
-  },
-];
->>>>>>> bb0ebec39f9c27b15ff391c5d47b371d1d01e4d6
 
 export const useProjects = () => {
   const context = useContext(ProjectContext);
