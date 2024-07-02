@@ -137,11 +137,7 @@ export const ProjectProvider = ({ children }: { children: ReactNode }) => {
         setLoading(true);
 
         const response = await fetch(setBaseUrl(), {
-          method: "GET",
           mode: "cors",
-          headers: {
-            "Content-Type": "application/json",
-          },
         });
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
