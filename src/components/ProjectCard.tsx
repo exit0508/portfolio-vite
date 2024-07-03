@@ -21,7 +21,7 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
           <img
             src={project.thumbnail}
             alt={project.title}
-            className="object-contain h-48 w-96"
+            className="object-contain m-auto h-48 w-96"
           />
         </CardContent>
         <CardFooter>
