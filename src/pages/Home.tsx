@@ -1,7 +1,7 @@
 import Hero from "../components/Hero";
 import { Suspense } from "react";
-import RecentPostsSection from "@/components/RecentPostsSection";
 import LoadingCards from "@/components/LoadingCards";
+import ProjectsSection from "@/components/ProjectsSection";
 
 const Home = () => {
   return (
@@ -11,7 +11,7 @@ const Home = () => {
       </div>
       <h2 className="text-5xl mb-8">Recent Projects</h2>
       <Suspense fallback={<LoadingCards num={3} />}>
-        <RecentPostsSection />
+        <ProjectsSection mode={"home"} />
       </Suspense>
     </div>
   );

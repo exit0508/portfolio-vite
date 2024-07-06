@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { resolve } from "path";
 import LoadingCards from "./LoadingCards";
 
-export default function ProjectsSection() {
+export default function ProjectsSection({ mode }: { mode: string }) {
   const posts: ProjectProps[] = use(fetchData("/projects"));
   //console.log("aaaa", posts);
   const [allPostsLoaded, setAllPostsLoaded] = useState<boolean>(false);
@@ -42,16 +42,29 @@ export default function ProjectsSection() {
   }, [posts]);
 
   if (!allPostsLoaded) {
-    return (
-      <div>
-        <LoadingCards num={posts.length} />
-      </div>
-    ); // すべてのデータが読み込まれるまでローディング画面を表示
+    switch (mode) {
+      case "home":
+        return (
+          <div>
+            <LoadingCards num={3} />
+          </div>
+        );
+      case "projects":
+        return (
+          <div>
+            <LoadingCards num={posts.length} />
+          </div>
+        );
+    } // すべてのデータが読み込まれるまでローディング画面を表示
   }
 
   return (
     <section>
-      <CardList projects={posts} />
+      {mode === "home" ? (
+        <CardList projects={posts} num={3} />
+      ) : (
+        <CardList projects={posts} />
+      )}
     </section>
   );
 }

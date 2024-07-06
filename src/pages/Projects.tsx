@@ -7,7 +7,7 @@ const Projects = () => {
     <>
       <h2 className="text-5xl mb-8">Projects</h2>
       <Suspense fallback={<LoadingCards />}>
-        <ProjectsSection />
+        <ProjectsSection mode={"projects"} />
       </Suspense>
     </>
   );
