@@ -8,6 +8,9 @@ import {
 } from "@/components/ui/card";
 import { ExternalLink } from "lucide-react";
 import { ProjectProps } from "../utils/projectContext";
+import { lazy } from "react";
+
+const LazyImage = lazy(() => import("./CardImage"));
 
 const ProjectCard = ({ project }: { project: ProjectProps }) => {
   return (
@@ -18,11 +21,9 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
           <CardDescription>{project.projectDate}</CardDescription>
         </CardHeader>
         <CardContent>
-          <img
-            src={project.thumbnail}
-            alt={project.title}
-            className="object-contain m-auto h-48 w-96"
-          />
+          {project.thumbnail && (
+            <LazyImage src={project.thumbnail} alt={project.title} />
+          )}
         </CardContent>
         <CardFooter>
           <a href={project.publicLink}>
