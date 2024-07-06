@@ -8,8 +8,25 @@ import {
 } from "@/components/ui/card";
 import { ExternalLink } from "lucide-react";
 import { ProjectProps } from "../utils/projectContext";
+import { lazy, useEffect, useState } from "react";
+
+const LazyImage = lazy(() => import("./CardImage"));
 
 const ProjectCard = ({ project }: { project: ProjectProps }) => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  useEffect(() => {
+    const img = new Image();
+    if (project.thumbnail) {
+      img.src = project.thumbnail;
+    }
+    img.onload = () => setImageLoaded(true);
+  }, [project.thumbnail]);
+
+  if (!imageLoaded) {
+    return null; // 画像が読み込まれるまで何も表示しない
+  }
+
   return (
     <div className="w-auto">
       <Card key={project.id} className="h-96 flex flex-col justify-between">
@@ -18,11 +35,15 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
           <CardDescription>{project.projectDate}</CardDescription>
         </CardHeader>
         <CardContent>
-          <img
-            src={project.thumbnail}
-            alt={project.title}
-            className="object-contain h-48 w-96"
-          />
+          {imageLoaded ? (
+            project.thumbnail && (
+              <LazyImage src={project.thumbnail} alt={project.title} />
+            )
+          ) : (
+            <div className="object-contain h-48 w-96 bg-gray-200 animate-pulse">
+              Loading
+            </div>
+          )}
         </CardContent>
         <CardFooter>
           <a href={project.publicLink}>
