@@ -4,12 +4,13 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
   plugins: [react()],
+  base: "https://portfolio-vite-ept.pages.dev",
   server: {
     proxy: {
-      "/projects": {
-        target: "https://hono-backend.exit-deguchi0508.workers.dev/projects",
+      "/api": {
+        target: "https://hono-backend.exit-deguchi0508.workers.dev",
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/projects/, ""),
+        rewrite: (path) => path.replace(/^\/api/, ""),
       },
     },
   },
