@@ -119,7 +119,7 @@ export function use<T>(promise: Promise<T>) {
         promise.reason = reason;
       }
     );
-    console.log(promise);
+    //console.log(promise);
     throw promise;
   }
 }
@@ -146,9 +146,21 @@ async function getData(url: string): Promise<any> {
 }
 
 async function getProjects(): Promise<ProjectProps[] | unknown> {
+  const BASE_URL = import.meta.env.VITE_API_BASE_URL as string;
+  //console.log(BASE_URL);
+
+  const setBaseUrl = () => {
+    if (import.meta.env.MODE === "production") {
+      return BASE_URL + "/projects";
+    } else {
+      return "/api/projects";
+    }
+  };
   // Add a fake delay to make waiting noticeable.
   try {
-    const response = await fetch("/projects");
+    const response = await fetch(setBaseUrl(), {
+      credentials: "include",
+    });
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }

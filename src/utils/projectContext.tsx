@@ -121,7 +121,7 @@ export const ProjectProvider = ({ children }: { children: ReactNode }) => {
   const [error, setError] = useState<string | null>(null);
 
   const BASE_URL = import.meta.env.VITE_API_BASE_URL as string;
-  console.log(BASE_URL);
+  //console.log(BASE_URL);
 
   const setBaseUrl = () => {
     if (import.meta.env.MODE === "production") {
@@ -135,7 +135,7 @@ export const ProjectProvider = ({ children }: { children: ReactNode }) => {
     const fetchProjects = async () => {
       try {
         setLoading(true);
-        console.log(setBaseUrl());
+        //console.log(setBaseUrl());
         const response = await fetch(setBaseUrl(), {
           credentials: "include",
         });
@@ -143,7 +143,7 @@ export const ProjectProvider = ({ children }: { children: ReactNode }) => {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const projects = await response.json();
-        console.log("project: ", projects);
+        //console.log("project: ", projects);
         setProjects(projects);
         //setProjects(dummyData);
         setLoading(false);
