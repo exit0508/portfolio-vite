@@ -1,7 +1,6 @@
 import { fetchData, ProjectProps, use } from "@/utils/projectData";
 import CardList from "./CardList";
 import { useState, useEffect } from "react";
-import { resolve } from "path";
 import LoadingCards from "./LoadingCards";
 
 export default function ProjectsSection({ mode }: { mode: string }) {
