@@ -9,12 +9,13 @@ import {
 import { ExternalLink } from "lucide-react";
 import { ProjectProps } from "../utils/projectContext";
 import { lazy } from "react";
+import "../Anime.css";
 
 const LazyImage = lazy(() => import("./CardImage"));
 
 const ProjectCard = ({ project }: { project: ProjectProps }) => {
   return (
-    <div className="w-auto">
+    <div className="w-auto anime-fadein">
       <Card key={project.id} className="h-96 flex flex-col justify-between">
         <CardHeader>
           <CardTitle className="text-lg">{project.title}</CardTitle>

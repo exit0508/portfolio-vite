@@ -166,6 +166,7 @@ async function getProjects(): Promise<ProjectProps[] | unknown> {
     }
     const projects = await response.json();
     return projects;
+    //return await dummyData;
   } catch (error) {
     console.error(error ? error : "An unknown error occurred");
     return error;

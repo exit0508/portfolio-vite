@@ -1,0 +1,13 @@
+@keyframes fadein {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+.anime-fadein {
+  animation: fadein 0.7s;
+  animation-timing-function: cubic-bezier(0, 0.55, 0.45, 1); /*easeOutQuart*/
+}
