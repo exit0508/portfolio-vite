@@ -21,7 +21,7 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
           <CardTitle className="text-lg">{project.title}</CardTitle>
           <CardDescription>{project.projectDate}</CardDescription>
         </CardHeader>
-        <CardContent>
+        <CardContent className="flex justify-center">
           {project.thumbnail && (
             <LazyImage src={project.thumbnail} alt={project.title} />
           )}

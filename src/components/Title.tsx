@@ -3,7 +3,7 @@ import { GithubIcon, LucideLinkedin, LucideMail } from "lucide-react";
 
 export function ButtonContact() {
   return (
-    <div className="mt-5">
+    <div className="flex flex-col">
       <span>Let's connect me via below media!</span>
       <div className="flex items-center">
         <Button variant="ghost">
@@ -28,16 +28,16 @@ export function ButtonContact() {
 
 const Title = () => {
   return (
-    <>
-      <h1 className="text-2xl">Yurina Deguchi</h1>
-      <h2 className="text-xl">
+    <div>
+      <h1 className="text-3xl font-bold">Yurina Deguchi</h1>
+      <h2 className="text-xl mt-2">
         Aspiring designer and front-end developer passionate about creating in
         the Pluriverse :)
       </h2>
-      <div>
+      <div className="mt-3">
         <ButtonContact />
       </div>
-    </>
+    </div>
   );
 };
 
