@@ -6,13 +6,15 @@ import ProjectsSection from "@/components/ProjectsSection";
 const Home = () => {
   return (
     <div className="container">
-      <div className="pt-1">
+      <div className="mt-8 mb-10">
         <Hero />
       </div>
-      <h2 className="text-5xl mb-8">Recent Projects</h2>
-      <Suspense fallback={<LoadingCards num={3} />}>
-        <ProjectsSection mode={"home"} />
-      </Suspense>
+      <div className="">
+        <h2 className="text-3xl font-bold mb-4">Recent Projects</h2>
+        <Suspense fallback={<LoadingCards num={3} />}>
+          <ProjectsSection mode={"home"} />
+        </Suspense>
+      </div>
     </div>
   );
 };
