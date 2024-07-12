@@ -18,7 +18,7 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
     <div className="w-auto anime-fadein">
       <Card
         key={project.id}
-        className="h-96 flex flex-col justify-between bg-white dark:bg-darkBgCard text-black dark:text-primary"
+        className="h-96 flex flex-col justify-between bg-white text-black dark:text-primary"
       >
         <CardHeader>
           <CardTitle className="text-lg">{project.title}</CardTitle>
@@ -33,7 +33,7 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
           <a href={project.publicLink}>
             <div className="flex items-center">
               Read more{" "}
-              <ExternalLink className="h-5 ml-2 mb-1 stroke-black/60" />
+              <ExternalLink className="h-5 ml-2 mb-1 stroke-black/60 dark:stroke-white/70" />
             </div>
           </a>
         </CardFooter>
