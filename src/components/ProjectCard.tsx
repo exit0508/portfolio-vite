@@ -16,7 +16,10 @@ const LazyImage = lazy(() => import("./CardImage"));
 const ProjectCard = ({ project }: { project: ProjectProps }) => {
   return (
     <div className="w-auto anime-fadein">
-      <Card key={project.id} className="h-96 flex flex-col justify-between">
+      <Card
+        key={project.id}
+        className="h-96 flex flex-col justify-between bg-white dark:bg-darkBgCard text-black dark:text-primary"
+      >
         <CardHeader>
           <CardTitle className="text-lg">{project.title}</CardTitle>
           <CardDescription>{project.projectDate}</CardDescription>

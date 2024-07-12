@@ -6,7 +6,7 @@ import Projects from "./pages/Projects";
 
 function App() {
   return (
-    <div className="font-Roboto min-h-screen bg-primary dark:bg-gray-950 text-black dark:text-white">
+    <div className="font-Roboto min-h-screen bg-primary dark:bg-gray-950 text-black dark:text-primary">
       <div className="container mx-auto p-4">
         <div className="sticky top-3 z-50">
           <Header />
