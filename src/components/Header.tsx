@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <header>
       <nav>
-        <div className="lg:w-2/5 w- md:w-3/5 sm:w-2/3 rounded-full bg-white bg-white/90  dark:bg-bgDark/50 backdrop-blur-lg">
+        <div className="lg:w-2/5 w- md:w-3/5 sm:w-2/3 rounded-full bg-white/70 dark:bg-bgDark/50 backdrop-blur-lg">
           <div className="flex flex-row items-center justify-between py-3 px-8 md:gap-5 sm:gap-2">
             <div className="flex gap-4">
               <div className="">
